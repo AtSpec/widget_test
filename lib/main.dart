@@ -93,12 +93,34 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("Simple text"),
+                Column(
+                  children: [
+                    Text("Simple 2 text"),
+                    Text("Simple 2 text"),
+                  ],
+                ),
+              ],
+            ),
             Text(
               'You have pushed the button this many times:',
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            Container(
+              height: 80,
+              width: 260,
+              color: Colors.blueGrey,
+              alignment: Alignment.center,
+              transform: Matrix4.rotationZ(-0.25),
+              child: const Text("Containers!",
+                  style: TextStyle(color: Colors.white, fontSize: 25)),
             ),
           ],
         ),
